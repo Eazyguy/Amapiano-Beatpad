@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="bootstrap.css" >
+<style type="text/css">
+body{
+padding-top:4.5rem
+}
+
+.general{
+margin: -15px 0 20px 0;
+padding:0 !important;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="bg-dark p-4 mx-auto rounded" style="max-width:500px" >
+<div class="form-check form-check-inline form-switch float-end">
+<label class="form-check-label text-light fs-4 fw-bold" for="switch" id="LSwitch">OFF</label>
+<input type="checkbox" class="form-check-input mt-1 ms-0" id="switch" onclick="setSwitch()">
+</div>
+<h2 class="text-light text-center me-5">Amapiano Beat Pad</h2>
+<input type="checkbox" class="btn-check" autocomplete="off" id="Q" onclick="playBeat1()" disabled>
+<label class="btn btn-outline-light m-3" for="Q">Q</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="W" onclick="playBeat2()" disabled>
+<label class="btn btn-outline-light m-3" for="W">W</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="E" onclick="playBeat3()" disabled>
+<label class="btn btn-outline-light m-3" for="E">E</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="R" onclick="playBeat4()" disabled>
+<label class="btn btn-outline-light m-3" for="R">R</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="T" onclick="playBeat5()" disabled>
+<label class="btn btn-outline-light m-3" for="T">T</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="Y" onclick="playBeat6()" disabled>
+<label class="btn btn-outline-light m-3" for="Y">Y</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="U" onclick="playBeat7()" disabled>
+<label class="btn btn-outline-light m-3" for="U">U</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="I" onclick="playBeat8()" disabled>
+<label class="btn btn-outline-light m-3" for="I">I</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="O" onclick="playBeat9()" disabled>
+<label class="btn btn-outline-light m-3" for="O">O</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="P" onclick="playBeat10()" disabled>
+<label class="btn btn-outline-light m-3" for="P">P</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="A" onclick="playBeat11()" disabled>
+<label class="btn btn-outline-light m-3" for="A">A</label>
+<input type="checkbox" class="btn-check" autocomplete="off" id="S" onclick="playBeat12()" disabled>
+<label class="btn btn-outline-light m-3" for="S">S</label>
+
+
+<!-- Single Audio Controls -->
+<!-- Beat 1 -->
+
+<div class="container text-dark border mt-4" id="beat1Con" style="display:none;">
+<h2 class="text-light text-center general bg-dark">Beat 1(Q)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop1">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop1" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec1">00</span><span class="text-light fs-4 float-end" id="min1">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B1duration" min="0"  oninput="seekDuration()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol1">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B1volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed1">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B1speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 2 -->
+<div class="container text-dark border mt-4" id="beat2Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 2(W)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop2" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec2">00</span><span class="text-light fs-4 float-end" id="min2">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B2duration" min="0"  oninput="seekDuration2()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol2">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B2volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed2">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B2speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 3 -->
+<div class="container text-dark border mt-4" id="beat3Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 3(E)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop3" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec3">00</span><span class="text-light fs-4 float-end" id="min3">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B3duration" min="0"  oninput="seekDuration3()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol3">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B3volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed3">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B3speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 4 -->
+<div class="container text-dark border mt-4" id="beat4Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 4(R)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop4" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec4">00</span><span class="text-light fs-4 float-end" id="min4">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B4duration" min="0"  oninput="seekDuration4()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol4">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B4volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed4">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B4speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 5 -->
+<div class="container text-dark border mt-4" id="beat5Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 5(T)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop5" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec5">00</span><span class="text-light fs-4 float-end" id="min5">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B5duration" min="0"  oninput="seekDuration5()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol5">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B5volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed5">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B5speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 6 -->
+<div class="container text-dark border mt-4" id="beat6Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 6(Y)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop6" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec6">00</span><span class="text-light fs-4 float-end" id="min6">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B6duration" min="0"  oninput="seekDuration6()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol6">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B6volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed6">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B6speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 7 -->
+<div class="container text-dark border mt-4" id="beat7Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 7(U)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop7" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec7">00</span><span class="text-light fs-4 float-end" id="min7">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B7duration" min="0"  oninput="seekDuration7()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol7">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B7volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed7">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B7speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 8 -->
+<div class="container text-dark border mt-4" id="beat8Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 8(I)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop8" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec8">00</span><span class="text-light fs-4 float-end" id="min8">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B8duration" min="0"  oninput="seekDuration8()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol8">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B8volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed8">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B8speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 9 -->
+<div class="container text-dark border mt-4" id="beat9Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 9(O)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop9" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec9">00</span><span class="text-light fs-4 float-end" id="min9">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B9duration" min="0"  oninput="seekDuration9()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol9">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B9volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed9">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B9speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 10 -->
+<div class="container text-dark border mt-4" id="beat10Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 10(P)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop10">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop10" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec10">00</span><span class="text-light fs-4 float-end" id="min10">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B10duration" min="0"  oninput="seekDuration10()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol10">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B10volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed10">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B10speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 11 -->
+<div class="container text-dark border mt-4" id="beat11Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 11(A)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop11">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop11" onClick="setLoop()">
+</div><br><br>
+
+<span class="text-light fs-4 float-end" id="sec11">00</span><span class="text-light fs-4 float-end" id="min11">00:</span>
+
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B11duration" min="0"  oninput="seekDuration11()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol11">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B11volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed11">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B11speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+<!-- Beat 12 -->
+<div class="container text-dark border mt-4" id="beat12Con" style="display:none">
+<h2 class="text-light text-center general bg-dark">Beat 12(S)</h2>
+
+<div class ="form-check form-check-inline form-switch">
+<label class="form-check-label text-light fw-bold fs-5" for="loop12">Loop</label>
+<input type="checkbox" class="form-check-input" id="loop12" onClick="setLoop()">
+</div><br><br>
+<span class="text-light fs-4 float-end" id="sec12">00</span><span class="text-light fs-4 float-end" id="min12">00:</span>
+<label class="text-light fw-bold fs-5">Duration</label>
+<input type="range" value="0"  id="B12duration" min="0"  oninput="seekDuration12()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="vol12">100%</span>
+<label class="text-light fw-bold fs-5">Volume</label>
+<input type="range" value="0.1" id="B12volume" min="0" step="0.001" max="0.1" oninput="setVolume()" class="form-range">
+
+<span class="text-light fs-4 float-end" id="speed12">1x</span>
+<label class="text-light fw-bold fs-5">Speed</label>
+<input type="range" value="1" id="B12speed" min="0" step="0.1" max="2" oninput="setPlayback()" class="form-range">
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="jquery-3.7.0.min.js" type="text/javascript">
+</script>
+<script src="bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="Beat.js">
+</script>
+</body>
+</html>
