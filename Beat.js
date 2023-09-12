@@ -13,18 +13,18 @@ var beat10 =document.createElement("Audio")
 var beat11 =document.createElement("Audio")
 var beat12 =document.createElement("Audio")
 
-beat1.src="Beat1.mp3"
-beat2.src="Beat2.mp3"
-beat3.src="Beat3.mp3"
-beat4.src="Beat4.mp3"
-beat5.src="Beat5.mp3"
-beat6.src="Beat6.mp3"
-beat7.src="Beat7.mp3"
-beat8.src="Beat8.mp3"
-beat9.src="Beat9.mp3"
-beat10.src="Beat10.mp3"
-beat11.src="Beat11.mp3"
-beat12.src="Beat12.mp3"
+beat1.src="Assets/Beat1.m4a"
+beat2.src="Assets/Beat2.m4a"
+beat3.src="Assets/Beat3.m4a"
+beat4.src="Assets/Beat4.m4a"
+beat5.src="Assets/Beat5.m4a"
+beat6.src="Assets/Beat6.m4a"
+beat7.src="Assets/Beat7.m4a"
+beat8.src="Assets/Beat8.m4a"
+beat9.src="Assets/Beat9.m4a"
+beat10.src="Assets/Beat10.m4a"
+beat11.src="Assets/Beat11.m4a"
+beat12.src="Assets/Beat12.m4a"
 
 // Play beat
   
@@ -239,52 +239,19 @@ $('#beat1Con').show()
   
   $(beat1).on("ended", ()=>{
    $("#Q").prop("checked",false)
-  })
-  
-  $(beat2).on("ended", ()=>{
    $("#W").prop("checked",false)
-  })
-  
-  $(beat3).on("ended", ()=>{
    $("#E").prop("checked",false)
-  })
-  
-  $(beat4).on("ended", ()=>{
    $("#R").prop("checked",false)
-  })
-  
- $(beat5).on("ended", ()=>{
    $("#T").prop("checked",false)
-  })
-  
-  $(beat6).on("ended", ()=>{
    $("#Y").prop("checked",false)
-  })
- 
- $(beat7).on("ended", ()=>{
    $("#U").prop("checked",false)
-  })
-  
-  $(beat8).on("ended", ()=>{
    $("#I").prop("checked",false)
-  })
-  
-  $(beat9).on("ended", ()=>{
    $("#O").prop("checked",false)
-  })
-  
-  $(beat10).on("ended", ()=>{
    $("#P").prop("checked",false)
-  })
-  
-  $(beat11).on("ended", ()=>{
    $("#A").prop("checked",false)
-  })
-  
-  $(beat12).on("ended", ()=>{
    $("#S").prop("checked",false)
   })
- 
+  
   //set General Volume
 
 function setVolume(){
