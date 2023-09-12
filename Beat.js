@@ -13,18 +13,18 @@ var beat10 =document.createElement("Audio")
 var beat11 =document.createElement("Audio")
 var beat12 =document.createElement("Audio")
 
-beat1.src="Assets/Beat1.m4a"
-beat2.src="Assets/Beat2.m4a"
-beat3.src="Assets/Beat3.m4a"
-beat4.src="Assets/Beat4.m4a"
-beat5.src="Assets/Beat5.m4a"
-beat6.src="Assets/Beat6.m4a"
-beat7.src="Assets/Beat7.m4a"
-beat8.src="Assets/Beat8.m4a"
-beat9.src="Assets/Beat9.m4a"
-beat10.src="Assets/Beat10.m4a"
-beat11.src="Assets/Beat11.m4a"
-beat12.src="Assets/Beat12.m4a"
+beat1.src="Beat1.m4a"
+beat2.src="Beat2.m4a"
+beat3.src="Beat3.m4a"
+beat4.src="Beat4.m4a"
+beat5.src="Beat5.m4a"
+beat6.src="Beat6.m4a"
+beat7.src="Beat7.m4a"
+beat8.src="Beat8.m4a"
+beat9.src="Beat9.m4a"
+beat10.src="Beat10.m4a"
+beat11.src="Beat11.m4a"
+beat12.src="Beat12.m4a"
 
 // Play beat
   
